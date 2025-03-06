@@ -14,6 +14,7 @@ import {
   GOLF_REPAIR_TABLE,
   GOLF_RESERVATION_TABLE,
 } from './constants/GOLF_TABLE';
+import { MyReservation } from './pages/MyReservation';
 
 function App() {
   const location = useLocation();
@@ -36,6 +37,10 @@ function App() {
       <Route path="golf/:zoneId" element={<GolfReservation />} />
       <Route path="menu" element={<Menu />} />
       <Route path="profile" element={isAuth ? <Profile /> : <Login />} />
+      <Route
+        path="profile/my-reservation"
+        element={isAuth ? <MyReservation /> : <Login />}
+      />
     </Routes>
   );
 }
