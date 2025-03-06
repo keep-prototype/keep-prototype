@@ -10,12 +10,12 @@
 }
 .bg-green {
   background-color: #77e0a7;
-  border-color: #44a67d;
 }
 .bg-green-light {
-  background-color: rgba(165, 234, 151, 0.35);
+  background-color: rgba(165, 234, 151, 0.4);
+  border-color: #44a67d;
 }
-.bg-white {
+.bg-white-border {
   background-color: white;
   border-color: #44a67d;
 }
