@@ -1,0 +1,28 @@
+@import './Reset.css';
+
+@import 'tailwindcss';
+
+.text-green {
+  color: #2a7b2b;
+}
+.text-green-light {
+  color: #44a67d;
+}
+.bg-green {
+  background-color: #77e0a7;
+  border-color: #44a67d;
+}
+.bg-green-light {
+  background-color: rgba(165, 234, 151, 0.35);
+}
+.bg-white {
+  background-color: white;
+  border-color: #44a67d;
+}
+.text-brown {
+  color: #c5614f;
+}
+.bg-brown {
+  border-color: #a65344;
+  background-color: #feebe9;
+}
