@@ -31,10 +31,23 @@ export const GolfZone = ({ zoneId }) => {
   const isRepair = golfRepairTable.some((el) => el.zoneId === zoneId);
 
   return (
-    <figure id="timeRange" onClick={handleZoneClick}>
-      <p className={isRepair ? `text-red-400` : ``}>
-        {zoneId}구역 {isUse.current && '이용중'} {availableSlots.current}자리
-        남음
+    <figure
+      id="timeRange"
+      className={`relative h-24 border rounded-2xl  ${
+        isRepair ? 'bg-brown' : ''
+      } ${isUse.current ? 'bg-green-light' : ''} ${
+        !isRepair && !isUse.current ? 'bg-white-border' : ''
+      }
+      `}
+      onClick={handleZoneClick}
+    >
+      <p className="pt-2 pl-2 font-bold text-xs">{zoneId}번</p>
+      <p className="absolute top-1/2 left-1/2 -translate-1/2 w-full text-center text-sm font-bold">
+        {isUse.current && '이용 중'} {isRepair && '수리 중'}
+        {!isUse.current && !isRepair && '이용 가능'}
+      </p>
+      <p className="absolute bottom-2 w-full text-center text-xs ">
+        예약 가능 타임: {availableSlots.current}
       </p>
     </figure>
   );
