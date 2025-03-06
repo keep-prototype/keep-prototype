@@ -36,7 +36,7 @@ export const GolfReservation = () => {
 
     setListItem('golfReservationTable', golfReservationTable);
 
-    navigate('/profile');
+    navigate('/profile/my-reservation');
   };
 
   const handleModalBackgroundClick = () => {
@@ -44,14 +44,14 @@ export const GolfReservation = () => {
     setIsStandByModal(false);
   };
   return (
-    <main className="w-screen">
+    <main className="w-screen h-screen overflow-scroll pb-30">
       <section className="py-5 px-9 flex flex-col gap-1">
         <p className="font-bold text-2xl">{params.zoneId}번 타석 예약 선택</p>
         <p className="text-sm opacity-50">
           예약이 필요하시면 시간 선택 후 등록을 눌러주세요.
         </p>
       </section>
-      <section className="w-full flex flex-col justify-center items-center gap-1">
+      <section className="w-full flex flex-col justify-center items-center gap-2">
         {GOLF_TIME_TABLE.map((el) => {
           const golfReservationTable = getListItem('golfReservationTable');
           const isReservation = golfReservationTable.some(
@@ -63,7 +63,7 @@ export const GolfReservation = () => {
                 handleTimeClick(el.hour);
               }}
               key={el.hour}
-              className={`p-1 w-10/12 text-center text-xl font-semibold rounded-md border bg-white ${
+              className={`p-2 w-10/12 text-center text-xl font-semibold rounded-xl border bg-white ${
                 isReservation && `bg-brown`
               }`}
             >
@@ -73,28 +73,59 @@ export const GolfReservation = () => {
         })}
       </section>
       {isStandByModal && (
-        <main className="fixed top-0 left-0 w-screen h-screen">
+        <main className="fixed top-0 left-0 w-screen h-screen ">
           <div
             onClick={handleModalBackgroundClick}
-            className="fixed top-0 left-0 bg-black opacity-30 z-10 w-full h-full"
+            className="fixed top-0 left-0 bg-black opacity-70 z-10 w-full h-full"
           />
-          <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-blue-300 z-20 transform -translate-x-1/2 -translate-y-1/2">
-            대기모달
+          <div className="absolute top-1/2 left-1/2 w-10/12 flex flex-col items-center justify-center rounded-2xl h-40 bg-white z-20 transform -translate-x-1/2 -translate-y-1/2 ">
+            <p className="text-brown text-2xl font-semibold">
+              {clikedHour.current} : 00 ~ {clikedHour.current} : 55
+            </p>
+            {/* <p className="text-sm pt-1 pb-5">이미 예약이 완료된 타석입니다.</p> */}
+            <p className="text-sm pt-1 pb-5">대기하시겠습니까?</p>
+            <div className="w-full flex items-center justify-between px-10 font-bold">
+              <button
+                className="bg-green-light py-3 px-10 rounded-2xl"
+                onClick={handleReservationClick}
+              >
+                확인
+              </button>
+              <button
+                className="bg-white-border border py-3 px-10 rounded-2xl font-bold"
+                onClick={handleModalBackgroundClick}
+              >
+                취소
+              </button>
+            </div>
           </div>
         </main>
       )}
       {isReservationModal && (
-        <main className="fixed top-0 left-0 w-screen h-screen">
+        <main className="fixed top-0 left-0 w-screen h-screen ">
           <div
             onClick={handleModalBackgroundClick}
-            className="fixed top-0 left-0 bg-black opacity-30 z-10 w-full h-full"
+            className="fixed top-0 left-0 bg-black opacity-70 z-10 w-full h-full"
           />
-          <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-blue-300 z-20 transform -translate-x-1/2 -translate-y-1/2">
-            <p>
+          <div className="absolute top-1/2 left-1/2 w-10/12 flex flex-col items-center justify-center rounded-2xl h-40 bg-white z-20 transform -translate-x-1/2 -translate-y-1/2 ">
+            <p className="text-brown text-2xl font-semibold">
               {clikedHour.current} : 00 ~ {clikedHour.current} : 55
             </p>
-            <p>등록하시겠습니까?</p>
-            <button onClick={handleReservationClick}>예약하기</button>
+            <p className="text-sm pt-1 pb-5">등록하시겠습니까?</p>
+            <div className="w-full flex items-center justify-between px-10 font-bold">
+              <button
+                className="bg-green-light py-3 px-10 rounded-2xl"
+                onClick={handleReservationClick}
+              >
+                확인
+              </button>
+              <button
+                className="bg-white-border border py-3 px-10 rounded-2xl font-bold"
+                onClick={handleModalBackgroundClick}
+              >
+                취소
+              </button>
+            </div>
           </div>
         </main>
       )}
