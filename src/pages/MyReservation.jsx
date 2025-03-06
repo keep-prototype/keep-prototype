@@ -10,7 +10,7 @@ export const MyReservation = () => {
         </p>
       </section>
       <section className="flex flex-col gap-2 w-full">
-        {golfReservationTable.map((el) => {
+        {golfReservationTable?.map((el) => {
           return (
             <article className="flex gap-3 px-8 w-full">
               <figure className="w-full py-3 px-7 flex justify-between text-center text-xl font-semibold rounded-xl border bg-green-light">
