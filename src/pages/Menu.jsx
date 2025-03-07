@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router';
 import { RightButtonIcon } from '../shared/icons/RightButtonIcon';
+import { removeItem } from '../shared/lib/localStorage';
 
 export const Menu = () => {
   const navigate = useNavigate();
