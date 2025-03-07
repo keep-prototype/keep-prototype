@@ -2,9 +2,10 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { GOLF_TIME_TABLE } from '../constants/GOLF_TABLE';
 import { getListItem, setListItem } from '../shared/lib/localStorage';
-import { golfReservationTable } from '../store/atoms';
+import { getGolfReservationTable } from '../store/atoms';
 
 export const GolfReservation = () => {
+  const golfReservationTable = getGolfReservationTable();
   const params = useParams();
   const navigate = useNavigate();
   const currentZoneId = +params.zoneId;
@@ -65,7 +66,7 @@ export const GolfReservation = () => {
               }}
               key={el.hour}
               className={`p-2 w-10/12 text-center text-xl font-semibold rounded-xl border bg-white ${
-                isReservation && `bg-brown`
+                isReservation ? `bg-brown` : ''
               }`}
             >
               {el.timeRange}
