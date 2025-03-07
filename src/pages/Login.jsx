@@ -20,10 +20,10 @@ export const Login = () => {
 
   return (
     <main className="w-screen h-screen">
-      <div className="h-1/3 bg-green-light">
+      <div className="h-1/3 flex items-center justify-center bg-green-light">
         <img
-          className=""
-          src="https://room-critic-s3.s3.ap-northeast-2.amazonaws.com/KEE_BIT_LOGO.png"
+          className="h-full"
+          src="https://room-critic-s3.s3.ap-northeast-2.amazonaws.com/KEE_BIT_LOGO_BG.png"
           alt="logo"
         />
       </div>
