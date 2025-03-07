@@ -10,3 +10,14 @@ export const userInfo = {
   aptDong: getItem('aptDong'),
   aptHo: getItem('aptHo'),
 };
+
+export const getUserInfo = () => {
+  const userInfo = {
+    userName: getItem('userName'),
+    aptName: getItem('aptName'),
+    aptDong: getItem('aptDong'),
+    aptHo: getItem('aptHo'),
+  };
+
+  return userInfo;
+};

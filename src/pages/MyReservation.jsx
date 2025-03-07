@@ -1,10 +1,10 @@
-import { golfReservationTable, userInfo } from '../store/atoms';
+import { golfReservationTable } from '../store/atoms';
 
 export const MyReservation = () => {
   return (
     <main className="w-screen h-screen">
       <section className="px-10 pt-10 pb-7">
-        <p className="font-bold text-xl">{userInfo.userName}님의 예약</p>
+        {/* <p className="font-bold text-xl">{userInfo.userName}님의 예약</p> */}
         <p className="font-sm text-neutral-500">
           예약 변경과 취소를 할 수 있습니다.
         </p>

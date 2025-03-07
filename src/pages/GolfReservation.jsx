@@ -20,6 +20,7 @@ export const GolfReservation = () => {
     if (isReservation) {
       if (isReservationModal) setIsReservationModal(false);
       setIsStandByModal(true);
+      clikedHour.current = hour;
     } else {
       if (isStandByModal) setIsStandByModal(false);
       setIsReservationModal(true);

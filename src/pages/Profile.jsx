@@ -1,11 +1,12 @@
 import React from 'react';
 import { removeItem } from '../shared/lib/localStorage';
-import { golfReservationTable, userInfo } from '../store/atoms';
 import { UserProfileIcon } from '../shared/icons/UserProfileIcon';
 import { RightButtonIcon } from '../shared/icons/RightButtonIcon';
 import { useNavigate } from 'react-router';
+import { getUserInfo } from '../store/atoms';
 
 export const Profile = () => {
+  const userInfo = getUserInfo();
   const navigate = useNavigate();
   const submitLogout = () => {
     removeItem('userName');
