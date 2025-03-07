@@ -6,7 +6,6 @@ import { BottomBar } from './widgets/BottomBar.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <BottomBar />
     <App />
   </BrowserRouter>
 );
