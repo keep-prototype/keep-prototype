@@ -1,12 +1,15 @@
-import { useNavigate } from 'react-router';
 import React from 'react';
+import { useNavigate } from 'react-router';
 import { currentHour } from '../shared/lib/getTime';
 import { GOLF_TIME_TABLE } from '../constants/GOLF_TABLE';
-import { golfRepairTable, golfReservationTable } from '../store/atoms';
+import { getGolfRepairTable, getGolfReservationTable } from '../store/atoms';
 
 export const GolfZone = ({ zoneId }) => {
   const navigate = useNavigate();
   const [isModal, setIsModal] = React.useState(false);
+
+  const golfReservationTable = getGolfReservationTable();
+  const golfRepairTable = getGolfRepairTable();
 
   const isUse = React.useRef(false);
   const availableSlots = React.useRef(GOLF_TIME_TABLE.length);
@@ -19,7 +22,7 @@ export const GolfZone = ({ zoneId }) => {
     }
   };
 
-  golfReservationTable.forEach((el) => {
+  golfReservationTable?.forEach((el) => {
     if (el.zoneId === zoneId) {
       availableSlots.current--;
       if (el.hour === currentHour) {
