@@ -18,6 +18,10 @@ export const Login = () => {
     navigate('/');
   };
 
+  React.useEffect(() => {
+    navigate('/login');
+  }, []);
+
   return (
     <main className="w-screen h-screen">
       <div className="h-1/3 flex items-center justify-center bg-green-light">
