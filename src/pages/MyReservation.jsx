@@ -1,8 +1,10 @@
 import { getGolfReservationTable, getUserInfo } from '../store/atoms';
 
 export const MyReservation = () => {
+
   const golfReservationTable = getGolfReservationTable();
   const userInfo = getUserInfo();
+
   return (
     <main className="w-screen h-screen">
       <section className="px-10 pt-10 pb-7">
