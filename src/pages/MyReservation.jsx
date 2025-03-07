@@ -2,16 +2,17 @@ import { getUserInfo } from '../store/atoms';
 import { getListItem, setListItem } from '../shared/lib/localStorage';
 import { useState } from 'react';
 export const MyReservation = () => {
-
   const userInfo = getUserInfo();
 
-  const [reservations, setReservations] = useState(getListItem('golfReservationTable') || []);
+  const [reservations, setReservations] = useState(
+    getListItem('golfReservationTable') || []
+  );
   const [isCancelModal, setIsCancelModal] = useState(false); // 취소모달
   const [selectedReservation, setSelectedReservation] = useState(null); //내 예약중 선택된 예약
 
   // 취소 버튼 클릭시 모달 열기
   const handleCancelClick = (zoneId, hour) => {
-    setSelectedReservation({zoneId, hour});
+    setSelectedReservation({ zoneId, hour });
     setIsCancelModal(true);
   };
 
@@ -23,10 +24,14 @@ export const MyReservation = () => {
 
   // 확인 버튼 클릭시 예약을 삭제하는것
   const confirmCancelReservation = () => {
-    if(!selectedReservation) return;
+    if (!selectedReservation) return;
 
     const updatedReservations = reservations.filter(
-      (el) => !(el.zoneId === selectedReservation.zoneId && el.hour === selectedReservation.hour)
+      (el) =>
+        !(
+          el.zoneId === selectedReservation.zoneId &&
+          el.hour === selectedReservation.hour
+        )
     );
 
     setReservations([...updatedReservations]); // 상태 업데이트 ->(UI 반영)
@@ -50,7 +55,7 @@ export const MyReservation = () => {
 
   return (
     <main className="w-screen h-screen">
-      <section className="px-10 pt-10 pb-7">
+      <section className="px-10 pt-5 pb-7 text-center">
         <p className="font-bold text-xl">{userInfo.userName}님의 예약</p>
         <p className="font-sm text-neutral-500">
           예약 변경과 취소를 할 수 있습니다.
@@ -70,7 +75,7 @@ export const MyReservation = () => {
                 <button
                   className="h-full flex items-center justify-center border px-3 rounded-xl border-neutral-600"
                   onClick={() => handleCancelClick(el.zoneId, el.hour)}
-                  >
+                >
                   취소
                 </button>
               </div>
@@ -86,7 +91,8 @@ export const MyReservation = () => {
           />
           <div className="absolute top-1/2 left-1/2 w-10/12 flex flex-col items-center justify-center rounded-2xl h-40 bg-white z-20 transform -translate-x-1/2 -translate-y-1/2">
             <p className="text-brown text-2xl font-semibold">
-              {selectedReservation?.hour} : 00 ~ {selectedReservation?.hour} : 55
+              {selectedReservation?.hour} : 00 ~ {selectedReservation?.hour} :
+              55
             </p>
             <p className="text-sm pt-1 pb-5">예약을 취소하시겠습니까?</p>
             <div className="w-full flex items-center justify-between px-10 font-bold">
