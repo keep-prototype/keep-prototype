@@ -1,0 +1,9 @@
+/* 웹킷(Chrome, Edge, Safari)에서 스크롤바 숨기기 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox에서 스크롤바 숨기기 */
+html {
+  scrollbar-width: none;
+}
