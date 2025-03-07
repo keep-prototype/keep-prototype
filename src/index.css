@@ -2,6 +2,13 @@
 
 @import 'tailwindcss';
 
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+}
+
 .text-green {
   color: #2a7b2b;
 }
