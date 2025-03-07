@@ -7,20 +7,31 @@ import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { Login } from './pages/Login';
 import { Menu } from './pages/Menu';
-
-import { getItem, setListItem } from './shared/lib/localStorage';
 import { GolfReservation } from './pages/GolfReservation';
+import { MyReservation } from './pages/MyReservation';
+
+import { BottomBar } from './widgets/BottomBar';
+
+import { BackButton } from './shared/components/BackButton';
+import { getItem, setListItem } from './shared/lib/localStorage';
 import {
   GOLF_REPAIR_TABLE,
   GOLF_RESERVATION_TABLE,
 } from './constants/GOLF_TABLE';
-import { MyReservation } from './pages/MyReservation';
-import { BottomBar } from './widgets/BottomBar';
-import { BackButton } from './shared/components/BackButton';
 
 function App() {
   const location = useLocation();
   const [isAuth, setIsAuth] = React.useState();
+  const isBackButton = React.useRef();
+
+  const getIsBackButton = () => {
+    const pathName = location.pathname;
+    if (pathName === '/') return false;
+    if (pathName === '/menu') return false;
+    return true;
+  };
+
+  isBackButton.current = getIsBackButton();
 
   React.useEffect(() => {
     const isFirst = getItem('golfReservationTable') === null || undefined;
@@ -35,7 +46,7 @@ function App() {
   return (
     <>
       <BottomBar />
-      {location.pathname !== '/' && <BackButton />}
+      {isBackButton.current && <BackButton />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="golf" element={isAuth ? <Golf /> : <Login />} />
