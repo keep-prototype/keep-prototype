@@ -1,7 +1,7 @@
 export const FitnessCenterIcon = () => {
   return (
     <svg
-      width="88"
+      width="60"
       height="80"
       viewBox="0 0 88 80"
       fill="none"

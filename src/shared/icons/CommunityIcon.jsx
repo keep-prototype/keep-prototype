@@ -1,7 +1,7 @@
 export const CommunityIcon = () => {
   return (
     <svg
-      width="88"
+      width="60"
       height="82"
       viewBox="0 0 88 82"
       fill="none"

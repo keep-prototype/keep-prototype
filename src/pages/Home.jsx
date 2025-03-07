@@ -18,16 +18,15 @@ export const Home = () => {
 
   return (
     <main className="flex flex-col items-center w-screen h-screen overflow-hidden">
-      <section className="w-screen flex flex-col pt-5 pl-5 pb-5">
-        <p className="text-xl font-bold">
-          {userInfo.userName && userInfo.userName + '님 '}안녕하세요!
-        </p>
-        <p className="text-md text-neutral-400">
-          이용하실 메뉴를 클릭해주세요.
-        </p>
+      <section className="h-20">
+        <img
+          className="w-full h-full"
+          src="https://room-critic-s3.s3.ap-northeast-2.amazonaws.com/KEE_BIT_LOGO.png"
+          alt=""
+        />
       </section>
       <section className="w-screen flex flex-col items-center gap-5">
-        <div className="flex w-full gap-5 px-5">
+        <div className="flex w-full gap-5 px-7 pt-5">
           <figure
             className="w-1/2 py-3 bg-green-light rounded-2xl flex flex-col items-center justify-center gap-2"
             onClick={handleGolfClick}
@@ -40,7 +39,7 @@ export const Home = () => {
             <p className="text-xl font-bold text-neutral-600">헬스</p>
           </figure>
         </div>
-        <div className="flex gap-5 w-full px-5">
+        <div className="flex gap-5 w-full px-7">
           <figure className="w-1/2 py-3 bg-green-light rounded-2xl flex flex-col items-center justify-center gap-2">
             <ReadingRoom />
             <p className="text-xl font-bold text-neutral-600">독서실</p>

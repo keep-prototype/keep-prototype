@@ -1,7 +1,7 @@
 export const GolfIcon = () => {
   return (
     <svg
-      width="88"
+      width="60"
       height="88"
       viewBox="0 0 88 88"
       fill="none"
