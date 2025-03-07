@@ -1,6 +1,9 @@
 import { golfReservationTable } from '../store/atoms';
 
 export const MyReservation = () => {
+  const test = 0
+
+  console.log(test)
   return (
     <main className="w-screen h-screen">
       <section className="px-10 pt-10 pb-7">
