@@ -20,7 +20,7 @@ export const Home = () => {
     <main className="flex flex-col items-center w-screen h-screen overflow-hidden">
       <section className="h-20">
         <img
-          className="w-full h-full"
+          className="h-full"
           src="https://room-critic-s3.s3.ap-northeast-2.amazonaws.com/KEE_BIT_LOGO.png"
           alt=""
         />
