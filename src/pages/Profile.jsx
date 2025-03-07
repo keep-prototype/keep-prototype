@@ -14,7 +14,8 @@ export const Profile = () => {
     removeItem('aptDong');
     removeItem('aptHo');
 
-    window.location.reload();
+    // window.location.reload();
+    navigate('/');
   };
   const redirectMyReservation = () => {
     navigate('/profile/my-reservation');
