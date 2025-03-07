@@ -46,14 +46,14 @@ export const GolfReservation = () => {
     setIsStandByModal(false);
   };
   return (
-    <main className="w-screen h-screen overflow-scroll pb-30">
+    <main className="w-screen h-screen overflow-hidden">
       <section className="py-5 px-9 flex flex-col gap-1">
-        <p className="font-bold text-2xl">{params.zoneId}번 타석 예약 선택</p>
-        <p className="text-sm opacity-50">
+        <p className="font-bold text-2xl text-center">{params.zoneId}번 타석</p>
+        <p className="text-sm opacity-50 text-center">
           예약이 필요하시면 시간 선택 후 등록을 눌러주세요.
         </p>
       </section>
-      <section className="w-full flex flex-col justify-center items-center gap-2">
+      <section className="w-full flex flex-col items-center gap-2 overflow-scroll h-11/12 pt-1 pb-40">
         {GOLF_TIME_TABLE.map((el) => {
           const golfReservationTable = getListItem('golfReservationTable');
           const isReservation = golfReservationTable.some(
@@ -65,7 +65,7 @@ export const GolfReservation = () => {
                 handleTimeClick(el.hour);
               }}
               key={el.hour}
-              className={`p-2 w-10/12 text-center text-xl font-semibold rounded-xl border bg-white ${
+              className={`p-2 w-10/12 text-center text-xl font-semibold rounded-xl border bg-white-border ${
                 isReservation ? `bg-brown` : ''
               }`}
             >
