@@ -14,7 +14,6 @@ export const Profile = () => {
     removeItem('aptDong');
     removeItem('aptHo');
 
-    // window.location.reload();
     navigate('/');
   };
   const redirectMyReservation = () => {
@@ -23,8 +22,7 @@ export const Profile = () => {
 
   return (
     <main className="flex flex-col">
-      <section className="flex flex-col items-center gap-5">
-        <p className="text-2xl font-bold pt-10">프로필</p>
+      <section className=" mt-10 flex flex-col items-center gap-5">
         <UserProfileIcon />
         <div className="flex flex-col gap-1 items-center justify-center">
           <p className="text-xl font-bold">{userInfo.userName}</p>
