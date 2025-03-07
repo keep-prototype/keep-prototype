@@ -16,6 +16,7 @@ import {
 } from './constants/GOLF_TABLE';
 import { MyReservation } from './pages/MyReservation';
 import { BottomBar } from './widgets/BottomBar';
+import { BackButton } from './shared/components/BackButton';
 
 function App() {
   const location = useLocation();
@@ -33,9 +34,9 @@ function App() {
 
   return (
     <>
-      {<BottomBar />}
+      <BottomBar />
+      {location.pathname !== '/' && <BackButton />}
       <Routes>
-        {/* <Route path="/" element={isAuth ? <Home /> : <Login />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="golf" element={isAuth ? <Golf /> : <Login />} />
         <Route path="golf/:zoneId" element={<GolfReservation />} />

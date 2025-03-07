@@ -21,7 +21,7 @@ export const BottomBar = () => {
   };
 
   return (
-    <section className="fixed bottom-0 left-0 w-screen h-18 flex items-center justify-between px-8 bg-white">
+    <section className="fixed bottom-0 left-0 w-screen h-1/12 flex items-center justify-between px-8 bg-white">
       <div
         onClick={handleMenuClick}
         className={`flex flex-col items-center justify-center gap-1 ${
@@ -29,7 +29,7 @@ export const BottomBar = () => {
         } `}
       >
         <OptionIcon />
-        <button>메뉴</button>
+        {/* <button>메뉴</button> */}
       </div>
       <div
         onClick={handleHomeClick}
@@ -40,7 +40,7 @@ export const BottomBar = () => {
         } `}
       >
         <HomeIcon />
-        <button>홈</button>
+        {/* <button>홈</button> */}
       </div>
       <div
         onClick={handleProfileClick}
@@ -51,7 +51,7 @@ export const BottomBar = () => {
         } `}
       >
         <UserIcon />
-        <button>프로필</button>
+        {/* <button>프로필</button> */}
       </div>
     </section>
   );

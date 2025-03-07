@@ -20,9 +20,15 @@ export const Login = () => {
 
   return (
     <main className="w-screen h-screen">
-      <div className="h-1/4 bg-green-light" />
-      <p className="font-bold text-2xl pt-8 pb-5 px-5">키빗! 시작해봐요!</p>
-      <form className="w-full px-5 flex flex-col gap-5 text-lg">
+      <div className="h-1/3 bg-green-light">
+        <img
+          className=""
+          src="https://room-critic-s3.s3.ap-northeast-2.amazonaws.com/KEE_BIT_LOGO.png"
+          alt="logo"
+        />
+      </div>
+      {/* <p className="font-bold text-2xl pt-8 pb-5 px-5">키빗! 시작해봐요!</p> */}
+      <form className="pt-10 w-full px-5 flex flex-col gap-5 text-lg">
         <input
           className="border w-full p-2.5 rounded-lg border-neutral-300 focus:ring-2 focus:ring-lime-200"
           w-full
