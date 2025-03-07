@@ -33,6 +33,7 @@ function App() {
 
   return (
     <>
+      {<BottomBar />}
       <Routes>
         {/* <Route path="/" element={isAuth ? <Home /> : <Login />} /> */}
         <Route path="/" element={<Home />} />
@@ -46,7 +47,6 @@ function App() {
           element={isAuth ? <MyReservation /> : <Login />}
         />
       </Routes>
-      {<BottomBar />}
     </>
   );
 }
