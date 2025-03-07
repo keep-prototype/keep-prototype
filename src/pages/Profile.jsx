@@ -1,8 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import { removeItem } from '../shared/lib/localStorage';
 import { UserProfileIcon } from '../shared/icons/UserProfileIcon';
 import { RightButtonIcon } from '../shared/icons/RightButtonIcon';
-import { useNavigate } from 'react-router';
 import { getUserInfo } from '../store/atoms';
 
 export const Profile = () => {
